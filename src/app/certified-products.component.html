@@ -1,0 +1,18 @@
+<h2>Certified Products</h2>
+<ul class="certified-products">
+  <li *ngFor="let certifiedProduct of certifiedProducts"
+    [class.selected]="certifiedProduct === selectedCertifiedProduct"
+    (click)="onSelect(certifiedProduct)">
+    <span class="badge">{{certifiedProduct.id}}</span> {{certifiedProduct.chplProductNumber}}
+  </li>
+  <div [ngBusy]="busy"></div>
+</ul>
+<div *ngIf="selectedCertifiedProduct">
+  <h2>
+    <div>CHPL Product Number: {{selectedCertifiedProduct.chplProductNumber | uppercase}}</div>
+    <div>ID: {{selectedCertifiedProduct.id}}</div>
+    <div>Edition: {{selectedCertifiedProduct.edition}}</div>
+    <div>Certification Date: {{selectedCertifiedProduct.certificationDate}}</div>
+    <div>Last Modified Date: {{selectedCertifiedProduct.lastModifiedDate}}</div>
+  </h2>
+</div>

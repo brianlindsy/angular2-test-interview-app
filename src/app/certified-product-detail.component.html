@@ -1,0 +1,9 @@
+<div *ngIf="certifiedProduct">
+  <h2>This is product number{{certifiedProduct.chplProductNumber}}</h2>
+  <div>
+    <label>id: </label>{{certifiedProduct.id}}</div>
+  <div>
+    <label>Product Number: </label>
+    <input [(ngModel)]="certifiedProduct.chplproductNumber" placeholder="chplProductNumber" />
+  </div>
+</div>
